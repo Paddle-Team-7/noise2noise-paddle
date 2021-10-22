@@ -1,6 +1,6 @@
 # Noise2Noise: Learning Image Restoration without Clean Data
 
-This is an unofficial PyTorch implementation of [Noise2Noise](https://arxiv.org/abs/1803.04189) (Lehtinen et al. 2018).
+This is an unofficial Paddl implementation of [Noise2Noise](https://arxiv.org/abs/1803.04189) (Lehtinen et al. 2018).
 
 ## Dependencies
 
