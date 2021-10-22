@@ -1,15 +1,13 @@
 # Noise2Noise: Learning Image Restoration without Clean Data
 
-This is an unofficial PyTorch implementation of [Noise2Noise](https://arxiv.org/abs/1803.04189) (Lehtinen et al. 2018).
+This is an unofficial Paddl implementation of [Noise2Noise](https://arxiv.org/abs/1803.04189) (Lehtinen et al. 2018).
 
 ## Dependencies
 
-* [PyTorch](https://pytorch.org/) (0.4.1)
-* [Torchvision](https://pytorch.org/docs/stable/torchvision/index.html) (0.2.0)
+* [PaddlePaddle](https://paddlepaddle.org.cn/) (0.4.1)
 * [NumPy](http://www.numpy.org/) (1.14.2)
 * [Matplotlib](https://matplotlib.org/) (2.2.3)
 * [Pillow](https://pillow.readthedocs.io/en/latest/index.html) (5.2.0)
-* [OpenEXR](http://www.openexr.com/) (1.3.0)
 
 To install the latest version of all packages, run
 ```
