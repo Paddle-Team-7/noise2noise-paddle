@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import torch
-import torch.nn as nn
-from torch.optim import Adam, lr_scheduler
+import paddle
+import paddle.nn as nn
+from paddle.optimizer import Adam, lr
 
 from unet import UNet
 from utils import *
@@ -39,13 +39,14 @@ class Noise2Noise(object):
         # Set optimizer and loss, if in training mode
         if self.trainable:
             self.optim = Adam(self.model.parameters(),
-                              lr=self.p.learning_rate,
-                              betas=self.p.adam[:2],
-                              eps=self.p.adam[2])
+                              learning_rate=self.p.learning_rate,
+                              beta1=self.p.adam[0],
+                              beta2=self.p.adam[1],
+                              epsilon=self.p.adam[2])
 
             # Learning rate adjustment
-            self.scheduler = lr_scheduler.ReduceLROnPlateau(self.optim,
-                patience=self.p.nb_epochs/4, factor=0.5, verbose=True)
+            # TODO: verify 'monitor' parameter
+            self.scheduler = lr.ReduceLROnPlateau(patience=self.p.nb_epochs/4, factor=0.5, verbose=True)
 
             # Loss function
             if self.p.loss == 'hdr':
@@ -57,11 +58,11 @@ class Noise2Noise(object):
                 self.loss = nn.L1Loss()
 
         # CUDA support
-        self.use_cuda = torch.cuda.is_available() and self.p.cuda
-        if self.use_cuda:
-            self.model = self.model.cuda()
-            if self.trainable:
-                self.loss = self.loss.cuda()
+        # self.use_cuda = self.p.cuda
+        # if self.use_cuda:
+        #     self.model = self.model.cuda()
+        #     if self.trainable:
+        #         self.loss = self.loss.cuda()
 
 
     def _print_params(self):
@@ -103,7 +104,7 @@ class Noise2Noise(object):
             valid_loss = stats['valid_loss'][epoch]
             fname_unet = '{}/n2n-epoch{}-{:>1.5f}.pt'.format(self.ckpt_dir, epoch + 1, valid_loss)
         print('Saving checkpoint to: {}\n'.format(fname_unet))
-        torch.save(self.model.state_dict(), fname_unet)
+        paddle.save(self.model.state_dict(), fname_unet)
 
         # Save stats to JSON
         fname_dict = '{}/n2n-stats.json'.format(self.ckpt_dir)
@@ -115,10 +116,10 @@ class Noise2Noise(object):
         """Loads model from checkpoint file."""
 
         print('Loading checkpoint from: {}'.format(ckpt_fname))
-        if self.use_cuda:
-            self.model.load_state_dict(torch.load(ckpt_fname))
-        else:
-            self.model.load_state_dict(torch.load(ckpt_fname, map_location='cpu'))
+        # if self.use_cuda:
+        #     self.model.set_state_dict(paddle.load(ckpt_fname))
+        # else:
+        self.model.set_state_dict(paddle.load(ckpt_fname))
 
 
     def _on_epoch_end(self, stats, train_loss, epoch, epoch_start, valid_loader):
@@ -169,8 +170,8 @@ class Noise2Noise(object):
             source_imgs.append(source)
             clean_imgs.append(target)
 
-            if self.use_cuda:
-                source = source.cuda()
+            # if self.use_cuda:
+            #     source = source.cuda()
 
             # Denoise
             denoised_img = self.model(source).detach()
@@ -198,9 +199,9 @@ class Noise2Noise(object):
         psnr_meter = AvgMeter()
 
         for batch_idx, (source, target) in enumerate(valid_loader):
-            if self.use_cuda:
-                source = source.cuda()
-                target = target.cuda()
+            # if self.use_cuda:
+            #     source = source.cuda()
+            #     target = target.cuda()
 
             # Denoise
             source_denoised = self.model(source)
@@ -257,9 +258,9 @@ class Noise2Noise(object):
                 batch_start = datetime.now()
                 progress_bar(batch_idx, num_batches, self.p.report_interval, loss_meter.val)
 
-                if self.use_cuda:
-                    source = source.cuda()
-                    target = target.cuda()
+                # if self.use_cuda:
+                #     source = source.cuda()
+                #     target = target.cuda()
 
                 # Denoise image
                 source_denoised = self.model(source)
@@ -268,7 +269,7 @@ class Noise2Noise(object):
                 loss_meter.update(loss.item())
 
                 # Zero gradients, perform a backward pass, and update the weights
-                self.optim.zero_grad()
+                self.optim.clear_grad()
                 loss.backward()
                 self.optim.step()
 
@@ -288,7 +289,7 @@ class Noise2Noise(object):
         print('Training done! Total elapsed time: {}\n'.format(train_elapsed))
 
 
-class HDRLoss(nn.Module):
+class HDRLoss(nn.Layer):
     """High dynamic range loss."""
 
     def __init__(self, eps=0.01):
@@ -302,4 +303,4 @@ class HDRLoss(nn.Module):
         """Computes loss by unpacking render buffer."""
 
         loss = ((denoised - target) ** 2) / (denoised + self._eps) ** 2
-        return torch.mean(loss.view(-1))
+        return paddle.mean(loss.view(-1))

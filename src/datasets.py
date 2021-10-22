@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import torch
-import torch.nn.functional as F
-import torchvision.transforms.functional as tvF
-from torch.utils.data import Dataset, DataLoader
+import paddle
+import paddle.nn.functional as F
+from paddle.vision.transforms import functional as tvF
+from paddle.io import Dataset, DataLoader
 
 from utils import load_hdr_as_tensor
 
@@ -14,7 +14,7 @@ import numpy as np
 import random
 from string import ascii_letters
 from PIL import Image, ImageFont, ImageDraw
-import OpenEXR
+# import OpenEXR
 
 from matplotlib import rcParams
 rcParams['font.family'] = 'serif'
@@ -30,12 +30,11 @@ def load_dataset(root_dir, redux, params, shuffled=False, single=False):
     noise = (params.noise_type, params.noise_param)
 
     # Instantiate appropriate dataset class
-    if params.noise_type == 'mc':
-        dataset = MonteCarloDataset(root_dir, redux, params.crop_size,
-            clean_targets=params.clean_targets)
-    else:
-        dataset = NoisyDataset(root_dir, redux, params.crop_size,
-            clean_targets=params.clean_targets, noise_dist=noise, seed=params.seed)
+    # if params.noise_type == 'mc':
+    #     dataset = MonteCarloDataset(root_dir, redux, params.crop_size,
+    #         clean_targets=params.clean_targets)
+    dataset = NoisyDataset(root_dir, redux, params.crop_size,
+        clean_targets=params.clean_targets, noise_dist=noise, seed=params.seed)
 
     # Use batch size of 1, if requested (e.g. test set)
     if single:
@@ -227,6 +226,7 @@ class NoisyDataset(AbstractDataset):
         return source, target
 
 
+'''
 class MonteCarloDataset(AbstractDataset):
     """Class for dealing with Monte Carlo rendered images."""
 
@@ -296,3 +296,4 @@ class MonteCarloDataset(AbstractDataset):
         target = buffers[3]
 
         return source, target
+'''
