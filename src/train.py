@@ -20,7 +20,7 @@ def parse_args():
     parser.add_argument('-v', '--valid-dir', help='test set path', default='./../data/valid')
     parser.add_argument('--ckpt-save-path', help='checkpoint save path', default='./../ckpts')
     parser.add_argument('--ckpt-overwrite', help='overwrite model checkpoint on save', action='store_true')
-    parser.add_argument('--report-interval', help='batch report interval', default=500, type=int)
+    parser.add_argument('--report-interval', help='batch report interval', default=50, type=int)
     parser.add_argument('-ts', '--train-size', help='size of train dataset', type=int)
     parser.add_argument('-vs', '--valid-size', help='size of valid dataset', type=int)
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-#import torch
-#import torch.nn as nn
+import torch
+import torch.nn as nn
 
 from datasets import load_dataset
 from noise2noise import Noise2Noise

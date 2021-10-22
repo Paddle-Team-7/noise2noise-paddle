@@ -12,9 +12,9 @@ import os
 import numpy as np
 from math import log10
 from datetime import datetime
-import OpenEXR
+# import OpenEXR
 from PIL import Image
-import Imath
+#import Imath
 
 from matplotlib import rcParams
 rcParams['font.family'] = 'serif'
@@ -83,6 +83,7 @@ def plot_per_epoch(ckpt_dir, title, measurements, y_label):
     plt.close()
 
 
+'''
 def load_hdr_as_tensor(img_path):
     """Converts OpenEXR image to torch float tensor."""
 
@@ -101,6 +102,7 @@ def load_hdr_as_tensor(img_path):
         tensor[i, :, :] = paddle.to_tensor(rgb32f.reshape(size[1], size[0]))
         
     return tensor
+'''
 
 
 def reinhard_tonemap(tensor):
