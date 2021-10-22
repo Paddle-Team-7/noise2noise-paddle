@@ -3,11 +3,7 @@
 
 import paddle
 import paddle.nn as nn
-<<<<<<< HEAD
 import paddle.optimizer as opt
-=======
-from paddle.optimizer import Adam, lr
->>>>>>> b83390e4c2c2c14b0ff9f810b99d4a6d3d762d62
 
 from unet import UNet
 from utils import *
@@ -42,11 +38,7 @@ class Noise2Noise(object):
 
         # Set optimizer and loss, if in training mode
         if self.trainable:
-<<<<<<< HEAD
             self.optim = opt.Adam(parameters=self.model.parameters(),
-=======
-            self.optim = Adam(self.model.parameters(),
->>>>>>> b83390e4c2c2c14b0ff9f810b99d4a6d3d762d62
                               learning_rate=self.p.learning_rate,
                               beta1=self.p.adam[0],
                               beta2=self.p.adam[1],
@@ -54,11 +46,7 @@ class Noise2Noise(object):
 
             # Learning rate adjustment
             # TODO: verify 'monitor' parameter
-<<<<<<< HEAD
             self.scheduler = opt.lr.ReduceOnPlateau(learning_rate=self.optim.get_lr(), patience=self.p.nb_epochs/4, factor=0.5, verbose=True)
-=======
-            self.scheduler = lr.ReduceLROnPlateau(patience=self.p.nb_epochs/4, factor=0.5, verbose=True)
->>>>>>> b83390e4c2c2c14b0ff9f810b99d4a6d3d762d62
 
             # Loss function
             if self.p.loss == 'hdr':
