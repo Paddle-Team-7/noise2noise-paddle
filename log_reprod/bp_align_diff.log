@@ -1,0 +1,21 @@
+[2021/10/23 17:10:48] root INFO: loss_0: 
+[2021/10/23 17:10:48] root INFO: 	mean diff: check passed: True, value: 5.960464477539063e-08
+[2021/10/23 17:10:48] root INFO: loss_1: 
+[2021/10/23 17:10:48] root INFO: 	mean diff: check passed: True, value: 2.9802322387695312e-08
+[2021/10/23 17:10:48] root INFO: loss_2: 
+[2021/10/23 17:10:48] root INFO: 	mean diff: check passed: True, value: 2.9802322387695312e-08
+[2021/10/23 17:10:48] root INFO: loss_3: 
+[2021/10/23 17:10:48] root INFO: 	mean diff: check passed: True, value: 4.470348358154297e-08
+[2021/10/23 17:10:48] root INFO: loss_4: 
+[2021/10/23 17:10:48] root INFO: 	mean diff: check passed: True, value: 4.470348358154297e-08
+[2021/10/23 17:10:48] root INFO: loss_5: 
+[2021/10/23 17:10:48] root INFO: 	mean diff: check passed: True, value: 5.960464477539063e-08
+[2021/10/23 17:10:48] root INFO: loss_6: 
+[2021/10/23 17:10:48] root INFO: 	mean diff: check passed: True, value: 2.9802322387695312e-08
+[2021/10/23 17:10:48] root INFO: loss_7: 
+[2021/10/23 17:10:48] root INFO: 	mean diff: check passed: True, value: 1.4901161193847656e-08
+[2021/10/23 17:10:48] root INFO: loss_8: 
+[2021/10/23 17:10:48] root INFO: 	mean diff: check passed: True, value: 1.043081283569336e-07
+[2021/10/23 17:10:48] root INFO: loss_9: 
+[2021/10/23 17:10:48] root INFO: 	mean diff: check passed: True, value: 1.4901161193847656e-08
+[2021/10/23 17:10:48] root INFO: diff check passed
