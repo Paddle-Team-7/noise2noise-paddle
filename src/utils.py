@@ -150,7 +150,7 @@ def create_montage(img_name, noise_type, save_path, source_t, denoised_t, clean_
 
     # Open pop up window, if requested
     if show > 0:
-       plt.show()
+        plt.show()
 
     # Save to files
     fname = os.path.splitext(img_name)[0]
