@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import torch
-import torch.nn as nn
+import paddle
+import paddle.nn as nn
 
 from datasets import load_dataset
 from noise2noise import Noise2Noise
@@ -42,6 +42,6 @@ if __name__ == '__main__':
     n2n = Noise2Noise(params, trainable=False)
     params.redux = False
     params.clean_targets = True
-    test_loader = load_dataset(params.data, 0, params, shuffled=False, single=True)
+    test_loader = load_dataset(params.data, 1, params, shuffled=False, single=True)
     n2n.load_model(params.load_ckpt)
     n2n.test(test_loader, show=params.show_output)

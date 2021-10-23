@@ -125,18 +125,22 @@ def create_montage(img_name, noise_type, save_path, source_t, denoised_t, clean_
     fig.canvas.set_window_title(img_name.capitalize()[:-4])
 
     # Bring tensors to CPU
-    source_t = source_t.cpu().narrow(0, 0, 3)
+    source_t = source_t.cpu().slice([0], [0], [3])
     denoised_t = denoised_t.cpu()
     clean_t = clean_t.cpu()
     
-    source = tvF.to_pil_image(source_t)
-    denoised = tvF.to_pil_image(paddle.clip(denoised_t, 0, 1))
-    clean = tvF.to_pil_image(clean_t)
+    source = paddle.transpose(source_t*255, [1, 2, 0]).numpy().astype('uint8')
+    denoised = paddle.transpose(denoised_t*255, [1, 2, 0]).numpy().astype('uint8')
+    clean = paddle.transpose(clean_t*255, [1, 2, 0]).numpy().astype('uint8')
+    source = Image.fromarray(source)
+    denoised = Image.fromarray(denoised)
+    clean = Image.fromarray(clean)
 
     # Build image montage
     psnr_vals = [psnr(source_t, clean_t), psnr(denoised_t, clean_t)]
-    titles = ['Input: {:.2f} dB'.format(psnr_vals[0]),
-              'Denoised: {:.2f} dB'.format(psnr_vals[1]),
+    print(psnr_vals[0].item(), psnr_vals[1].item())
+    titles = ['Input: {:.2f} dB'.format(psnr_vals[0].item()),
+              'Denoised: {:.2f} dB'.format(psnr_vals[1].item()),
               'Ground truth']
     zipped = zip(titles, [source, denoised, clean])
     for j, (title, img) in enumerate(zipped):
@@ -146,7 +150,7 @@ def create_montage(img_name, noise_type, save_path, source_t, denoised_t, clean_
 
     # Open pop up window, if requested
     if show > 0:
-        plt.show()
+       plt.show()
 
     # Save to files
     fname = os.path.splitext(img_name)[0]

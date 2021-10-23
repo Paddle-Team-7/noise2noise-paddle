@@ -99,10 +99,10 @@ class Noise2Noise(object):
 
         # Save checkpoint dictionary
         if self.p.ckpt_overwrite:
-            fname_unet = '{}/n2n-{}.pt'.format(self.ckpt_dir, self.p.noise_type)
+            fname_unet = '{}/n2n-{}.pdparams'.format(self.ckpt_dir, self.p.noise_type)
         else:
             valid_loss = stats['valid_loss'][epoch]
-            fname_unet = '{}/n2n-epoch{}-{:>1.5f}.pt'.format(self.ckpt_dir, epoch + 1, valid_loss)
+            fname_unet = '{}/n2n-epoch{}-{:>1.5f}.pdparams'.format(self.ckpt_dir, epoch + 1, valid_loss)
         print('Saving checkpoint to: {}\n'.format(fname_unet))
         paddle.save(self.model.state_dict(), fname_unet)
 
@@ -265,6 +265,7 @@ class Noise2Noise(object):
                 #     target = target.cuda()
 
                 # Denoise image
+                print(source.shape)
                 source_denoised = self.model(source)
 
                 loss = self.loss(source_denoised, target)
