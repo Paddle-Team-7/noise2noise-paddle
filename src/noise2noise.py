@@ -265,7 +265,6 @@ class Noise2Noise(object):
                 #     target = target.cuda()
 
                 # Denoise image
-                print(source.shape)
                 source_denoised = self.model(source)
 
                 loss = self.loss(source_denoised, target)
