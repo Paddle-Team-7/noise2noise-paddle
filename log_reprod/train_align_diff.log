@@ -1,0 +1,5 @@
+[2021/10/24 16:20:31] root INFO: psnr-denoised: 
+[2021/10/24 16:20:31] root INFO: 	mean diff: check passed: False, value: 0.1774139404296875
+[2021/10/24 16:20:31] root INFO: psnr-clean: 
+[2021/10/24 16:20:31] root INFO: 	mean diff: check passed: False, value: 0.0190887451171875
+[2021/10/24 16:20:31] root INFO: diff check failed
