@@ -1,6 +1,6 @@
 # Noise2Noise-Paddle
 
-[English](./README.md) | 简体中文
+[English](./ReadMe.md) | 简体中文
 
    * [Nois2Noise-Paddle](#noise2noise-paddle)
       * [一、简介](#一简介)
