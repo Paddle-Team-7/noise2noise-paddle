@@ -29,8 +29,8 @@
 
 | 指标 | 原论文| 参考代码 | 复现 |
 | --- | --- | --- | --- |
-| PSNR(gaussian-denoised) | 31.63 | 32.16 | 32.35 |
-| PSNR(gaussian-clean) | 31.61 | 32.21 | 32.19 |
+| PSNR(gaussian-denoised) | 31.61 | 32.16 | 32.35 |
+| PSNR(gaussian-clean) | 31.63 | 32.21 | 32.19 |
 
 
 ## 三、对齐日志
