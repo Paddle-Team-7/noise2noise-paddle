@@ -89,7 +89,7 @@ git clone https://github.com/Paddle-Team-7/noise2noise-paddle
 下载COCO验证集数据并划分为4200/8000的训练集/测试集。
 
 ```
-mkdir data && cd data
+cd data
 mkdir train valid test
 wget http://images.cocodataset.org/zips/val2017.zip
 unzip val2017.zip && cd val2017
