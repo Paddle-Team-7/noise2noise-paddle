@@ -25,7 +25,7 @@ In training, set batch size to 64.
 
 | Index | Raw Paper| Reference Code | Reproduction |
 | --- | --- | --- | --- |
-| PSNR(gaussian) | 31.63 | 32.16 | 32.23 |
+| PSNR(gaussian) | 31.63 | 32.16 | 32.35 |
 | PSNR(gaussian-clean) | 31.61 | 28.975616 | 32.19 |
 
 ## Reprod Log
