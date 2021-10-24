@@ -12,6 +12,7 @@ This is an unofficial Paddle implementation of [Noise2Noise](https://arxiv.org/a
 5. [Environment](#environment)
 6. [Train](#train)
 7. [Test](#test)
+8. [Code Structure](#code-structure)
 
 ## Introduction
 
@@ -127,3 +128,23 @@ python3 test.py \
 
 See `python3 test.py --h` for list of optional arguments, or `examples/test.sh` for an example.
 
+
+## Code Structure
+
+```
+├── ckpts  # pdparams and training logs
+├── figures  # output
+├── log_reprod
+├── src
+│   ├── datasets.py
+│   ├── noise2noise.py
+│   ├── render.py
+│   ├── test.py
+│   ├── train.py
+│   ├── unet.py
+│   └── utils.py
+├── LICENSE
+├── README_cn.md
+├── ReadMe.md
+└── requirements.txt
+```
