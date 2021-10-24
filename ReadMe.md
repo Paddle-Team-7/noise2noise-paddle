@@ -105,7 +105,7 @@ python3 train.py \
   --batch-size 4 \
   --loss l2 \
   --noise-type gaussian \
-  --noise-param 50 \
+  --noise-param 25 \
   --crop-size 64 \
   --plot-stats \
   --cuda
