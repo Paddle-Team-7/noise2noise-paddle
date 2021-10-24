@@ -2,7 +2,7 @@
 
 [English](./README.md) | 简体中文
 
-   * [SID-Paddle](#sid-paddle)
+   * [Nois2Noise-Paddle](#noise2noise-paddle)
       * [一、简介](#一简介)
       * [二、复现精度](#二复现精度)
       * [三、对齐日志](#三对齐日志）
@@ -12,7 +12,7 @@
          * [step1: clone](#step1-clone)
          * [step2: 下载数据](#step2-下载数据)
          * [step3: 训练](#step3-训练)
-         * [step4: 测试&评估](#step4-测试&评估)
+         * [step4: 测试与评估](#step4-测试与评估)
       * [七、代码结构与详细说明](#七代码结构与详细说明)
          * [7.1 代码结构](#71-代码结构)
          * [7.2 参数说明](#72-参数说明)
@@ -33,6 +33,7 @@
 | --- | --- | --- | --- |
 | PSNR(gaussian) | 31.63 | 32.16 | 32.23 |
 | PSNR(gaussian-clean) | 31.61 | 28.975616 | 32.19 |
+
 
 ## 三、对齐日志
 
@@ -135,7 +136,7 @@ python3 train.py \
   --clean-targets
 ```
 
-### step4: 测试&评估
+### step4: 测试与评估
 
 ```
 python3 test.py \
