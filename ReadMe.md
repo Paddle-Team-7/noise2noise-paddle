@@ -57,7 +57,7 @@ Based on 'ReprodDiffHelper' model, the following five log files are produced.
 ## Dataset
 The authors use [ImageNet](http://image-net.org/download), but any dataset will do. [COCO 2017](http://cocodataset.org/#download) has a small validation set (1 GB) which can be nicely split into train/valid for easier training. For instance, to obtain a 4200/800 train/valid split you can do:
 ```
-mkdir data && cd data
+cd data
 mkdir train valid test
 wget http://images.cocodataset.org/zips/val2017.zip
 unzip val2017.zip && cd val2017
