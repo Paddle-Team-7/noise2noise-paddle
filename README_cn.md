@@ -163,17 +163,17 @@ python3 test.py \
 ## 七、代码结构
 
 ```
-├── ckpts
-├── figures
-├── log_reprod
+├── ckpts  # 模型权重和训练日志
+├── figures  # 模型输出的图片
+├── log_reprod  # 对齐日志
 ├── src
-│   ├── datasets.py
+│   ├── datasets.py  # 数据集文件
 │   ├── noise2noise.py
 │   ├── render.py
-│   ├── test.py
-│   ├── train.py
-│   ├── unet.py
-│   └── utils.py
+│   ├── test.py  # 测试程序
+│   ├── train.py  # 训练程序
+│   ├── unet.py  # 网络结构
+│   └── utils.py  # 工具类
 ├── LICENSE
 ├── README_cn.md
 ├── ReadMe.md
