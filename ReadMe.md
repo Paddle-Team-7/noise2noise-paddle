@@ -68,7 +68,7 @@ mv `ls | head -800` ../valid
 You can also download the full datasets (7 GB) that more or less match the paper, if you have the bandwidth:
 
 ```
-mkdir data && cd data
+cd data
 mkdir train valid test
 wget http://images.cocodataset.org/zips/test2017.zip
 wget http://images.cocodataset.org/zips/val2017.zip
