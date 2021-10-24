@@ -13,9 +13,7 @@
          * [step2: 下载数据](#step2-下载数据)
          * [step3: 训练](#step3-训练)
          * [step4: 测试与评估](#step4-测试与评估)
-      * [七、代码结构与详细说明](#七代码结构与详细说明)
-         * [7.1 代码结构](#71-代码结构)
-         * [7.2 参数说明](#72-参数说明)
+      * [七、代码结构与详细说明](#七代码结构)
       * [八、模型信息](#八模型信息)
 
 ## 一、简介
@@ -32,7 +30,7 @@
 | 指标 | 原论文| 参考代码 | 复现 |
 | --- | --- | --- | --- |
 | PSNR(gaussian) | 31.63 | 32.16 | 32.23 |
-| PSNR(gaussian-clean) | 31.61 | 28.975616 | 32.19 |
+| PSNR(gaussian-clean) | 31.61 | 32.21 | 32.19 |
 
 
 ## 三、对齐日志
@@ -162,10 +160,25 @@ python3 test.py \
   --cuda
 ```
 
-## 七、代码结构与详细说明
+## 七、代码结构
 
-### 7.1 代码结构
-### 7.2 参数说明
+```
+├── ckpts
+├── figures
+├── log_reprod
+├── src
+│   ├── datasets.py
+│   ├── noise2noise.py
+│   ├── render.py
+│   ├── test.py
+│   ├── train.py
+│   ├── unet.py
+│   └── utils.py
+├── LICENSE
+├── README_cn.md
+├── ReadMe.md
+└── requirements.txt
+```
 
 ## 八、模型信息
 
