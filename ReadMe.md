@@ -42,7 +42,7 @@ log_reprod
 ├── bp_align_paddle.npy
 ├── bp_align_torch.npy
 ├── train_align_paddle.npy
-├── train_align_benchmark.npy
+├── train_align_torch.npy
 ```
 
 Based on 'ReprodDiffHelper' model, the following five log files are produced.
