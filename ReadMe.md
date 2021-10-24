@@ -25,8 +25,8 @@ In training, set batch size to 64.
 
 | Index | Raw Paper| Reference Code | Reproduction |
 | --- | --- | --- | --- |
-| PSNR(gaussian-denoised) | 31.63 | 32.16 | 32.35 |
-| PSNR(gaussian-clean) | 31.61 | 32.21 | 32.19 |
+| PSNR(gaussian-denoised) | 31.61 | 32.16 | 32.35 |
+| PSNR(gaussian-clean) | 31.63 | 32.21 | 32.19 |
 
 ## Reprod Log
 Based on 'reprod_log' model, the following documents are produced.
