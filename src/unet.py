@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-#import torch
-#import torch.nn as nn
 import paddle
 import paddle.nn as nn
 
