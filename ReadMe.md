@@ -116,7 +116,7 @@ Model checkpoints are automatically saved after every epoch. To test the denoise
 
 ```
 python3 test.py \
-  --data ../data \
+  --data ../data/test \
   --load-ckpt ../ckpts/gaussian/n2n.pt \
   --noise-type gaussian \
   --noise-param 25 \
