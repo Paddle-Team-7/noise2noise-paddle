@@ -26,7 +26,7 @@ import matplotlib.pyplot as plt
 def load_dataset(root_dir, redux, params, shuffled=False, single=False):
     """Loads dataset and returns corresponding data loader."""
 
-    # Create Torch dataset
+    # Create Paddle dataset
     noise = (params.noise_type, params.noise_param)
 
     # Instantiate appropriate dataset class
@@ -295,7 +295,7 @@ class MonteCarloDataset(AbstractDataset):
             buffers = [tvF.to_tensor(b) for b in self._random_crop(buffers)]
 
         # Stack buffers to create input volume
-        source = torch.cat(buffers[:3], dim=0)
+        source = paddle.concat(buffers[:3], dim=0)
         target = buffers[3]
 
         return source, target
