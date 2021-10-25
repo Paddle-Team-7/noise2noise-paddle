@@ -14,7 +14,7 @@ def parse_args():
     """Command-line argument parser for testing."""
 
     # New parser
-    parser = ArgumentParser(description='PyTorch implementation of Noise2Noise from Lehtinen et al. (2018)')
+    parser = ArgumentParser(description='Paddle implementation of Noise2Noise from Lehtinen et al. (2018)')
 
     # Data parameters
     parser.add_argument('-d', '--data', help='dataset root path', default='../data')
