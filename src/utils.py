@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-#import torch
-#import torch.nn.functional as F
-#import torchvision.transforms.functional as tvF
 import paddle
 from paddle.nn import functional as F
 from paddle.vision.transforms import functional as tvF
@@ -81,28 +78,6 @@ def plot_per_epoch(ckpt_dir, title, measurements, y_label):
     plot_fname = os.path.join(ckpt_dir, fname)
     plt.savefig(plot_fname, dpi=200)
     plt.close()
-
-
-'''
-def load_hdr_as_tensor(img_path):
-    """Converts OpenEXR image to torch float tensor."""
-
-    # Read OpenEXR file
-    if not OpenEXR.isOpenExrFile(img_path):
-        raise ValueError(f'Image {img_path} is not a valid OpenEXR file')
-    src = OpenEXR.InputFile(img_path)
-    pixel_type = Imath.PixelType(Imath.PixelType.FLOAT)
-    dw = src.header()['dataWindow']
-    size = (dw.max.x - dw.min.x + 1, dw.max.y - dw.min.y + 1)
-    
-    # Read into tensor
-    tensor = paddle.zeros([3, size[1], size[0]])
-    for i, c in enumerate('RGB'):
-        rgb32f = np.fromstring(src.channel(c, pixel_type), dtype=np.float32)
-        tensor[i, :, :] = paddle.to_tensor(rgb32f.reshape(size[1], size[0]))
-        
-    return tensor
-'''
 
 
 def reinhard_tonemap(tensor):
