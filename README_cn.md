@@ -14,7 +14,9 @@
          * [step3: 训练](#step3-训练)
          * [step4: 测试与评估](#step4-测试与评估)
       * [七、代码结构与详细说明](#七代码结构)
-      * [八、模型信息](#八模型信息)
+      * [八、结果展示](#八结果展示)
+      * [九、模型信息](#九模型信息)
+
 
 ## 一、简介
 
@@ -180,7 +182,27 @@ python3 test.py \
 └── requirements.txt
 ```
 
-## 八、模型信息
+#八、结果展示
+
+<table align="center">
+  <tr align="center">
+    <th colspan=9>Gaussian noise (σ = 25)</td>
+  </tr>
+  <tr align="center">
+    <td colspan=2>Noisy input (20.34 dB)</td>
+    <td colspan=2>Denoised (32.35 dB)</td>
+    <td colspan=2>Clean targets (32.19 dB)</td>
+    <td colspan=2>Ground truth</td>
+  </tr>
+  <tr align="center">
+    <td colspan=2><img src="figures/n2n-gaussian/monarch-gaussian-noisy.png"></td>
+    <td colspan=2><img src="figures/n2n-gaussian/monarch-gaussian-denoised.png"></td>
+    <td colspan=2><img src="figures/n2n-gaussian-clean/monarch-gaussian-denoised.png"></td>
+    <td colspan=2><img src="data/test/monarch.png"></td>
+  </tr> 
+</table>
+
+## 九、模型信息
 
 |  信息   |  说明 |
 |  ----  |  ----  |
