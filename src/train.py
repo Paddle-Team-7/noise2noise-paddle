@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-#import torch
-#import torch.nn as nn
-
 from datasets import load_dataset
 from noise2noise import Noise2Noise
 from argparse import ArgumentParser
@@ -13,7 +10,7 @@ def parse_args():
     """Command-line argument parser for training."""
 
     # New parser
-    parser = ArgumentParser(description='PyTorch implementation of Noise2Noise from Lehtinen et al. (2018)')
+    parser = ArgumentParser(description='Paddle implementation of Noise2Noise from Lehtinen et al. (2018)')
 
     # Data parameters
     parser.add_argument('-t', '--train-dir', help='training set path', default='./../data/train')
