@@ -172,14 +172,14 @@ Gaussian model was trained for 100 epochs with a train/valid split of 2000/400.
   </tr>
   <tr align="center">
     <td colspan=2>Noisy input (20.34 dB)</td>
-    <td colspan=2>Denoised (32.68 dB)</td>
-    <td colspan=2>Clean targets (32.49 dB)</td>
+    <td colspan=2>Denoised (32.35 dB)</td>
+    <td colspan=2>Clean targets (32.19 dB)</td>
     <td colspan=2>Ground truth</td>
   </tr>
   <tr align="center">
     <td colspan=2><img src="figures/n2n-gaussian/monarch-gaussian-noisy.png"></td>
     <td colspan=2><img src="figures/n2n-gaussian/monarch-gaussian-denoised.png"></td>
-    <td colspan=2><img src="figures/n2n-gaussian-clean/monarch-gaussian-clean.png"></td>
+    <td colspan=2><img src="figures/n2n-gaussian-clean/monarch-gaussian-denoised.png"></td>
     <td colspan=2><img src="data/test/monarch.png"></td>
   </tr> 
 </table>
