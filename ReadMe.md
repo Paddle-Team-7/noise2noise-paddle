@@ -164,7 +164,7 @@ See `python3 test.py --h` for list of optional arguments, or `examples/test.sh` 
 
 ## Result
 
-Gaussian model was trained for 100 epochs with a train/valid split of 2000/400.
+Gaussian model was trained for 200 epochs with a train/valid split of 2000/400.
 
 <table align="center">
   <tr align="center">
