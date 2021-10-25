@@ -138,7 +138,7 @@ python3 train.py \
 
 ```
 python3 test.py \
-  --data ../data \
+  --data ../data/test \
   --load-ckpt ../ckpts/gaussian/n2n.pdparams \
   --noise-type gaussian \
   --noise-param 25 \
@@ -150,7 +150,7 @@ python3 test.py \
 
 ```
 python3 test.py \
-  --data ../data \
+  --data ../data/test \
   --load-ckpt ../ckpts/gaussian/n2n-clean.pdparams \
   --noise-type gaussian \
   --noise-param 25 \
