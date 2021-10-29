@@ -83,7 +83,7 @@ Add your favorite images to the `data/test` folder. Only a handful will do to vi
 
 ## Environment
 - Frameworks: 
-* [PaddlePaddle](https://paddlepaddle.org.cn/) (0.4.1)
+* [PaddlePaddle](https://paddlepaddle.org.cn/) (2.1.2)
 * [NumPy](http://www.numpy.org/) (1.14.2)
 * [Matplotlib](https://matplotlib.org/) (2.2.3)
 * [Pillow](https://pillow.readthedocs.io/en/latest/index.html) (5.2.0)
